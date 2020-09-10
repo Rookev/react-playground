@@ -2,8 +2,16 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function Greeting(props) {
-  return <p>Hello, {props.name}!</p>;
+function BeautifulName(props) {
+  return <span style={{ fontFamily: 'cursive', fontWeight: 'bold' }}>{props.name}</span>;
+}
+
+function BeautifulLanguage(props) {
+  return <span style={{ fontFamily: 'courier', fontWeight: 'lighter' }}>{props.language}</span>;
+}
+
+function CoderInfo(props) {
+  return <p><BeautifulName name={props.name} /> (Favourite language: <BeautifulLanguage language={props.language} />)</p>;
 }
 
 function App() {
@@ -19,10 +27,9 @@ function App() {
         >
           Learn React
         </a>
-        <p>My second React line of code :-)</p>
-        <Greeting name="Kevin" />
-        <Greeting name="Matt" />
-        <Greeting name="Brian" />
+        <CoderInfo name="Kevin" language="Javascript" />
+        <CoderInfo name="Matt" language="Java" />
+        <CoderInfo name="Brian" language="Python" />
       </header>
     </div>
   );
